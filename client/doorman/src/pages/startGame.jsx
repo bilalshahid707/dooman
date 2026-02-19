@@ -4,7 +4,7 @@ import axios from "axios";
 export const StartGame = ({ setConversationId }) => {
 
     const handleClick = async () => {
-        const response = await axios.post(`http://127.0.0.1:8000/api/v1/conversations`)
+        const response = await axios.post(`https://dooman-production.up.railway.app/api/v1/conversations/`)
         setConversationId(response.data.id)
     }
 

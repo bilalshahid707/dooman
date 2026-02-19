@@ -17,7 +17,7 @@ export const Chat = ({ setScore, conversation_id }) => {
         setInput("");
         setLoading(true);
 
-        const { data } = await axios.post(`http://127.0.0.1:8000/api/v1/games`, {
+        const { data } = await axios.post(`https://dooman-production.up.railway.app/api/v1/games/`, {
             conversation_id,
             user_msg: input,
         });
