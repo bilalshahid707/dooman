@@ -9,6 +9,11 @@ router = APIRouter(prefix="/api/v1/conversations", tags=["conversations"])
 conversation_service = ConversationService()
 
 
+@router.get("/", status_code=status.HTTP_200_OK)
+def list_conversations(session: Session = Depends(get_session)):
+    return {"status": "ok"}
+
+
 @router.post("/", status_code=status.HTTP_201_CREATED)
 def create_issue(session: Session = Depends(get_session)):
     return conversation_service.create_conversation(session)
